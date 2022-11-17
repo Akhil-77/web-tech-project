@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body{
+      background-color: #ffffff;
+    }
+
+    .container {
+      border: 2px solid #03CDC2;
+      background-color: #03CDC2;
+      border-radius: 5px;
+      padding: 12px;
+      width: 25%;
+    }
+
+    .darker {
+      border-color: #ccc;
+      background-color: #ddd;
+    }
+
+    .container::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .container img {
+      float: left;
+      max-width: 60px;
+      width: 100%;
+      margin-right: 20px;
+      border-radius: 50%;
+    }
+
+    .container img.right {
+      float: right;
+      margin-left: 20px;
+      margin-right: 0;
+    }
+
+    .time-right {
+      float: right;
+      color: #aaa;
+    }
+
+    .time-left {
+      float: left;
+      color: #999;
+    }
+
+    .main {
+      margin-top: 30vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 150px;
+    }
+
+    input[type=text],
+    select {
+      margin-top: 5px;
+      width: 100%;
+      border-radius: 4px;
+      box-sizing: border-box;
+      padding: 12px;
+      border: 0px;
+      box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    input[type=text2],
+    select {
+      margin-top: -5px;
+      width: 100%;
+      border-radius: 4px;
+      box-sizing: border-box;
+      padding: 12px;
+      border: 0px;
+      box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    input[type=submit] {
+      width: 20%;
+      background-color: #08085c;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      margin-bottom: 5px;
+      margin-left: 40%;
+    }
+
+    .image img {
+      width: 350px;
+      height: auto;
+
+    }
+
+    input[type=submit]:hover {
+      background-color: #0a0a7c;
+    }
+
+    .heading {
+      border-radius: 5px;
+      background-color: white;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main">
+
+    <div class="image">
+      <img
+        src="https://img.freepik.com/free-vector/happy-man-online-dating-via-laptop_74855-7495.jpg?w=740&t=st=1667726625~exp=1667727225~hmac=3844df62e1a563e718ed444ba23b963b885446153c2c82d0bfa69dfd0cf056f1">
+    </div>
+
+    <div class="container">
+      <h2 style="text-align: center; margin-top: 4px; color: #08085c"> Chit Chat </h2>
+  
+    <form id="post-form" method="POST" action="checkview">
+      {% csrf_token %}
+
+      <input type="text" name="room_name" id="room_name" width="100px" placeholder="Room name"/>
+
+      <input type="text" name="username" id="username" width="100px" placeholder="Username"/>
+
+      <input type="submit" value="Enter Room" style="margin-top: 9px;">
+    </form>
+
+  </div>
+</body>
+</html>
